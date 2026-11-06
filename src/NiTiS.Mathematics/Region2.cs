@@ -48,6 +48,19 @@ public struct Region2<T> : IEquatable<Region2<T>>, IFormattable
 	}
 
 	/// <summary>
+	/// Creates new region with specified <paramref name="originX"/>, <paramref name="originY"/>, <paramref name="width"/> and <paramref name="height"/>.
+	/// </summary>
+	/// <param name="originX">Region origin X coordinate.</param>
+	/// <param name="originY">Region origin Y coordinate.</param>
+	/// <param name="width">Region width.</param>
+	/// <param name="height">Region height.</param>
+	public Region2(T originX, T originY, T width, T height)
+	{
+		Origin = new(originX, originY);
+		Size = new(width, height);
+	}
+
+	/// <summary>
 	/// Creates new region from zero point with specified <paramref name="size"/>.
 	/// </summary>
 	/// <param name="size">Region size.</param>

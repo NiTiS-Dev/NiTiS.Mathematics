@@ -40,8 +40,14 @@ public static class Vector3Extensions
 	extension<T>(Vector3<T> vector)
 		where T : unmanaged, INumber<T>, IRootFunctions<T>
 	{
+#if NET10_0_OR_GREATER
+		[OverloadResolutionPriority(1)]
+#endif
 		public T LengthSquared => vector.X * vector.X + vector.Y * vector.Y + vector.Z * vector.Z;
 
+#if NET10_0_OR_GREATER
+		[OverloadResolutionPriority(1)]
+#endif
 		public T Length => T.Sqrt(vector.LengthSquared);
 	}
 

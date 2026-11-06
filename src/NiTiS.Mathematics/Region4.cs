@@ -48,6 +48,23 @@ public struct Region4<T> : IEquatable<Region4<T>>, IFormattable
 	}
 
 	/// <summary>
+	/// Creates new region with specified <paramref name="originX"/>, <paramref name="originY"/>, <paramref name="originZ"/>, <paramref name="originW"/>, <paramref name="width"/>, <paramref name="height"/>, <paramref name="depth"/> and <paramref name="duration"/>.
+	/// </summary>
+	/// <param name="originX">Region origin X coordinate.</param>
+	/// <param name="originY">Region origin Y coordinate.</param>
+	/// <param name="originZ">Region origin Z coordinate.</param>
+	/// <param name="originW">Region origin W coordinate.</param>
+	/// <param name="width">Region width.</param>
+	/// <param name="height">Region height.</param>
+	/// <param name="depth">Region depth.</param>
+	/// <param name="duration">Region duration.</param>
+	public Region4(T originX, T originY, T originZ, T originW, T width, T height, T depth, T duration)
+	{
+		Origin = new(originX, originY, originZ, originW);
+		Size = new(width, height, depth, duration);
+	}
+
+	/// <summary>
 	/// Creates new region from zero point with specified <paramref name="size"/>.
 	/// </summary>
 	/// <param name="size">Region size.</param>

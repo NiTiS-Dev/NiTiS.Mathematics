@@ -41,8 +41,14 @@ public static class Vector2Extensions
 	extension<T>(Vector2<T> vector)
 		where T : unmanaged, INumber<T>, IRootFunctions<T>
 	{
+#if NET10_0_OR_GREATER
+		[OverloadResolutionPriority(1)]
+#endif
 		public T LengthSquared => vector.X * vector.X + vector.Y * vector.Y;
 
+#if NET10_0_OR_GREATER
+		[OverloadResolutionPriority(1)]
+#endif
 		public T Length => T.Sqrt(vector.LengthSquared);
 	}
 
