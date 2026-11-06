@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace NiTiS.Mathematics;
 
@@ -64,6 +65,16 @@ public static class NumberExtensions
             }
         }
         return true;
+    }
+
+    extension<N>(N)
+        where N : INumberBase<N>, IAdditionOperators<N, N, N>, IDivisionOperators<N, N, N>, IMultiplyOperators<N, N, N>
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static N MapValue(N value, N fromA, N toA, N fromB, N toB)
+        {
+            return fromB + (value - fromA) * (toB - fromB) / (toA - fromA);
+        }
     }
     
     /// <summary>
