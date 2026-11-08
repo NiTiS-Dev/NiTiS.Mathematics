@@ -19,11 +19,6 @@
 		<IncludeBuildOutput>true</IncludeBuildOutput>
 	</PropertyGroup>
 
-    <PropertyGroup Condition="'$(IsPackable)' == 'true'">
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageOutputPath>$(MSBuildThisFileDirectory)/../outPackages</PackageOutputPath>
-    </PropertyGroup>
-
 	<ItemGroup Condition="'$(IsPackable)' == 'true'">
 		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
 		<PackageReference Include="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" PrivateAssets="All"/>

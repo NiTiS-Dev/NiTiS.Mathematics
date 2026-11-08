@@ -1,0 +1,6 @@
+<Project>
+	<PropertyGroup Condition="'$(IsPackable)' == 'true'">
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageOutputPath>$(MSBuildThisFileDirectory)/../outPackages</PackageOutputPath>
+	</PropertyGroup>
+</Project>
